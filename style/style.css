@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+#ffbe0b
+#fb5607
+#ff006e
+#8338ec
+#3a86ff
+*/
+
+
+:root {
+  --font-color-1: black;
+  --font-color-2: white;
+
+  --color-bg-darker: rgb(180, 180, 180);
+  --color-bg-lighter: rgba(219, 219, 219, 0.8);
+  --color-bg-ligthest: rgba(255, 255, 255, 0.95);
+  --color-accent1: #4891ad;
+  --color-accent2: #0785fb;
+  --color-accent3: #ff006e;
+  --color-accent4: #8338ec;
+  --color-accent5: #3a86ff;
+  --color-contrast: rgb(255, 217, 0);
+
+  --color-shadow: rgba(97, 97, 97, 0.349);
+
+
+}
+
+body {
+  background-color: var(--color-bg-darker);
+  background-image: linear-gradient(to bottom right, var(--color-accent1), var(--color-accent1), var(--color-accent1));
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  width: 100vw;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav button {
+  height: 2rem;
+  width: 6rem;
+  background-color: rgb(255, 217, 0);
+  border-style: none;
+  border-radius: 1rem;
+}
+
+nav select {
+  height: 2rem;
+  width: 9.5rem;
+}
+
+#bg-bottom {
+  position: fixed;
+  top: 15vh;
+  height: 90vh;
+  width: 100vw;
+  background-image: linear-gradient(var(--color-bg-ligthest), var(--color-bg-ligthest));
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: var(--font-color-2);
+  margin-top: 1rem;
+  font-size: 2.4rem;
+}
+
+h1,
+h2 {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  /* Centers horizontally */
+  align-items: center;
+  /* Centers vertically */
+  min-height: 100vh;
+}
+
+#cards-container {
+  max-height: 100vh;
+  width: clamp(400px, 50vw, 800px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: fixed;
+  top: 15vh;
+  overflow: scroll;
+  padding-bottom: 20vh;
+  align-self: center;
+  scrollbar-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-ligthest);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 140px, var(--color-accent1)140px);
+  background-size: 80%;
+  border: 3px solid white;
+  border-radius: 1rem;
+  margin: 1rem;
+  filter: drop-shadow(0.25rem 0.25rem 0.75rem var(--color-shadow));
+  padding: 1rem;
+  height: 280px;
+  width: 350px;
+  text-align: center;
+  overflow: hidden;
+
+  button {
+    background-color: var(--color-contrast);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: var(--font-color-2);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: center;
+    border: none;
+
+  }
+
+  h2 {
+    color: var(--color-accent1);
+    padding: 0.2rem 0.2rem 0.7rem 0rem;
+  }
+
+  article,
+  aside {
+    padding: 1rem;
+  }
+
+
+}
+
+
+
+.card article {}
+
+.card aside {}

@@ -1,0 +1,7 @@
+/style/input.scss
+/style.output.css.map
+
+node_modules/
+dist/
+
+.vscode/    # Visual Studio Code settings
