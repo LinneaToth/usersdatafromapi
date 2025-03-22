@@ -1,3 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+.card, #cards-container {
+  border: 1px solid orange;
+}
+
+h1, h2, h3, h4 {
+  font-family: roboto, sans-serif;
+  font-weight: bolder;
+}
+
+p {
+  font-family: roboto, sans-serif;
+  font-weight: normal;
+}
+
+#cards-container {
+  min-width: 350px;
+  max-width: 550px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+body {
+  background-color: #E4E4DE;
+}
+
+header {
+  text-align: center;
+  background-color: #C4C5BA;
+  color: white;
+  padding: 2rem 0px;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Math for width and margins */
+#cards-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: white;
+  margin: 1rem 0;
+}
 
 /*# sourceMappingURL=output.css.map */

@@ -3,6 +3,7 @@
 const buildCard = function (user) {
     const card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add("id" + user.id);
     const infoMain = document.createElement("article");
     const btn = document.createElement("button");
     btn.innerText = "+";

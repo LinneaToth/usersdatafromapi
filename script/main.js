@@ -7,20 +7,33 @@ import { buildCard } from "../script/domBuilder.js";
 const userURL = "https://jsonplaceholder.typicode.com/users";
 const users = [];
 const cardsContainer = document.querySelector("#cards-container");
+const showAllBtn = document.querySelector("#show-all");
 
-const constructSite = async function () {
-    const userData = await getData(userURL);
-    
-    for (let [index, user] of userData.entries()) {
-        users[index] = new User(user);
-        console.log(users[index]);
-    
-    }
+const showAll = async function () {
+    if (showAllBtn.innerText === "Show all") {
+        console.log(showAllBtn.innerText);
+        const userData = await getData(userURL);
 
-    for (let user of users) {
-        const card = buildCard(user);
-        cardsContainer.appendChild(card);
+        for (let [index, user] of userData.entries()) {
+            users[index] = new User(user);
+        }
+
+        for (let user of users) {
+            const card = buildCard(user);
+            cardsContainer.appendChild(card);
+        }
+        showAllBtn.innerText = "Hide all"
+
+    } else if (showAllBtn.innerText === "Hide all") {
+        console.log(showAllBtn.innerText);
+        showAllBtn.innerText = "Show all";
+        const allCards = document.querySelectorAll(".card");
+
+        for (const card of allCards) {
+            card.remove();
+        }
     }
 }
 
-constructSite();
+
+showAllBtn.addEventListener("click", showAll);
