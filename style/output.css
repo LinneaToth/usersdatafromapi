@@ -4,11 +4,7 @@
   padding: 0;
 }
 
-.card, #cards-container {
-  border: 1px solid orange;
-}
-
-h1, h2, h3, h4 {
+button, h1, h2, h3, h4 {
   font-family: roboto, sans-serif;
   font-weight: bolder;
 }
@@ -16,6 +12,7 @@ h1, h2, h3, h4 {
 p {
   font-family: roboto, sans-serif;
   font-weight: normal;
+  color: #1B1B1B;
 }
 
 #cards-container {
@@ -36,20 +33,61 @@ header {
   padding: 2rem 0px;
   margin-bottom: 1rem;
 }
+header button {
+  width: 5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 2rem;
+}
 
 .hidden {
   display: none;
 }
 
-/* Math for width and margins */
+button {
+  background-color: #595f39;
+  border-style: none;
+  outline: none;
+  padding: 0 0.5rem;
+  margin-left: 1rem;
+  height: 2rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
 #cards-container {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .card {
   background-color: white;
   margin: 1rem 0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.card button {
+  margin-top: 2rem;
+}
+
+select {
+  border-radius: 0;
+  border-style: none;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=output.css.map */

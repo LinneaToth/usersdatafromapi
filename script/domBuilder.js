@@ -44,4 +44,13 @@ const buildCard = function (user) {
     return card;
 }
 
-export { buildCard };
+const buildSelect = function (users, selectElement) {
+    for (let user of users) {
+        const optionElement = document.createElement("option");
+        optionElement.value = user.id;
+        optionElement.innerText = user.name;
+        selectElement.appendChild(optionElement);
+    }
+}
+
+export { buildCard, buildSelect };
