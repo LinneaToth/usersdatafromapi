@@ -1,5 +1,6 @@
 "use strict"
 
+console.log("userclass loads")
 export class User {
     constructor(object) {
         this.id = object.id ?? "id missing";

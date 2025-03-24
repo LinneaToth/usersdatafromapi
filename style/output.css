@@ -23,18 +23,20 @@ p {
 }
 
 body {
-  background-color: #E4E4DE;
+  background-color: #f3f1ed;
 }
 
 header {
   text-align: center;
-  background-color: #C4C5BA;
+  background-color: #4682B4;
   color: white;
   padding: 2rem 0px;
   margin-bottom: 1rem;
 }
 header button {
   width: 5rem;
+  background-color: #272A57;
+  color: white;
 }
 
 h1 {
@@ -43,11 +45,13 @@ h1 {
 }
 
 .hidden {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
 
 button {
-  background-color: #595f39;
+  background-color: #4682B4;
   border-style: none;
   outline: none;
   padding: 0 0.5rem;
@@ -68,8 +72,24 @@ button {
   margin: 1rem 0;
   padding: 2rem;
   border-radius: 0.5rem;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
 }
 .card button {
+  margin-top: 2rem;
+  border-radius: 50%;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: #4682B4;
+  color: white;
+  margin-left: 0;
+  text-align: center;
+  vertical-align: center;
+}
+
+aside {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
   margin-top: 2rem;
 }
 

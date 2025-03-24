@@ -1,10 +1,10 @@
-import { getData } from "../script/getData.js";
-import { User } from "../script/userClass.js";
-import { buildCard, buildSelect } from "../script/domBuilder.js";
+import { getData } from "./getData.js";
+import { User } from "./userClass.js";
+import { buildCard, buildSelect } from "./domBuilder.js";
 
 "use strict"
 
-addEventListener("DOMContentLoaded", async function (event) {
+document.addEventListener("DOMContentLoaded", async () => {
 
     const userURL = "https://jsonplaceholder.typicode.com/users";
     const users = [];
@@ -29,7 +29,8 @@ addEventListener("DOMContentLoaded", async function (event) {
         }
     }
 
-    const showOrHideAll = function () {
+    function showOrHideAll() {
+        console.log("showOrHideAll runs");
         if (showAllBtn.innerText === "Show all") {
             for (let user of users) {
                 const card = buildCard(user);
@@ -45,27 +46,20 @@ addEventListener("DOMContentLoaded", async function (event) {
         }
     }
 
-    showAllBtn.addEventListener("click", showOrHideAll);
+    showAllBtn.addEventListener("click", () => {
+        showOrHideAll();
+    });
 
-
-
-    for (let option of allOptions) {
-        try {
-            option.addEventListener("click", () => {
-                console.log(option.value)
-                hideAll();
-
-                if (option.value) {
-                    const user = users.find((userMatch) => {
-                        return userMatch.id === parseInt(option.value);
-                    })
-                    const card = buildCard(user);
-                    cardsContainer.appendChild(card);
-                }
+    selectElement.addEventListener("change", () => {
+        const value = selectElement.selectedOptions[0].value;
+        hideAll();
+        if (value) {
+            const user = users.find((userMatch) => {
+                return userMatch.id === parseInt(value);
             })
-        } catch (error) {
-            console.log(error.message);
+            const card = buildCard(user);
+            cardsContainer.appendChild(card);
         }
-    }
+    })
 
 })

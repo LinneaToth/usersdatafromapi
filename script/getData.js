@@ -1,4 +1,5 @@
 "use strict"
+console.log("getdata loads")
 
 const getData = async function (url) {
     try {
@@ -6,7 +7,7 @@ const getData = async function (url) {
 
         if (!data.ok) {
             throw new Error("Response not ok, status: " + data.status);
-    }
+        }
         const dataJSON = await data.json();
         return dataJSON;
 
