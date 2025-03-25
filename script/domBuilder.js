@@ -33,7 +33,7 @@ function buildCard(user) {
     //Main user info
     const infoMain = buildElement("article");
     //Show/hide details button
-    const btn = buildElement("button", "▽");
+    const btn = buildElement("button", "▼");
     //Optional user info
     const infoOptional = buildElement("aside", null, null, "hidden");
     //Start of actual content
@@ -92,10 +92,10 @@ function buildCard(user) {
         infoOptional.classList.toggle("hidden");
         card.classList.toggle("double-card");
 
-        if (btn.innerText != "△") {
-            btn.innerText = "△";
+        if (btn.innerText != "▲") {
+            btn.innerText = "▲";
         } else {
-            btn.innerText = "▽";
+            btn.innerText = "▼";
         }
     })
     return card;

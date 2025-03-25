@@ -36,6 +36,7 @@ header button {
   width: 5rem;
   background-color: #172b3b;
   color: white;
+  cursor: pointer;
 }
 
 h1,
@@ -70,7 +71,7 @@ button {
   font-weight: bolder;
   text-align: center;
   font-style: normal;
-  transition: all 0.75s ease-in-out;
+  transition: all 0.15s ease-in-out;
   background-color: #172b3b;
   border-style: none;
   outline: none;
@@ -100,7 +101,7 @@ button:active {
   margin: 1rem 0;
   padding: 2rem;
   border-radius: 0.5rem;
-  transition: all 0.75s ease-in-out;
+  transition: all 0.15s ease-in-out;
   filter: drop-shadow(2px 5px 5px rgba(6, 11, 15, 0.062745098));
   overflow: hidden;
   height: 200px;
@@ -112,10 +113,22 @@ button:active {
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2rem;
+  height: 2rem;
   text-align: center;
   vertical-align: center;
+}
+.card button {
+  color: #a1a1a1;
+  background-color: white;
+  border: 1px solid #a1a1a1;
+  font-stretch: ultra-expanded;
+}
+.card button:active {
+  color: white;
+  background-color: #a1a1a1;
+  border: 1px solid white;
+  font-stretch: ultra-expanded;
 }
 
 .double-card {
