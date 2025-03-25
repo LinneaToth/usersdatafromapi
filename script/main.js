@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     function showOrHideAll() {
 
         if (showAllBtn.innerText === "Show all") {
-
+            hideAll();
             for (let user of users) {
                 const card = buildCard(user);
                 cardsContainer.appendChild(card);
