@@ -4,10 +4,11 @@
   padding: 0;
 }
 
-p {
+.card em, p {
   font-family: roboto, sans-serif;
+  font-style: normal;
   font-weight: normal;
-  color: #060B0F;
+  color: #060b0f;
 }
 
 #cards-container {
@@ -18,28 +19,33 @@ p {
 }
 
 body {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 header {
   font-family: roboto, sans-serif;
   font-weight: bolder;
   text-align: center;
-  background-color: #4682B4;
+  font-style: normal;
+  background-color: #4682b4;
   color: white;
   padding: 2rem 0px;
   margin-bottom: 1rem;
 }
 header button {
   width: 5rem;
-  background-color: #172B3B;
+  background-color: #172b3b;
   color: white;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: roboto, sans-serif;
   font-weight: bolder;
   text-align: center;
+  font-style: normal;
 }
 
 h1 {
@@ -47,7 +53,8 @@ h1 {
   margin: 0 2rem;
 }
 
-h2, h3 {
+h2,
+h3 {
   margin-bottom: 0.6666666667rem;
 }
 
@@ -61,8 +68,9 @@ button {
   font-family: roboto, sans-serif;
   font-weight: bolder;
   text-align: center;
+  font-style: normal;
   transition: all 0.75s ease-in-out;
-  background-color: #172B3B;
+  background-color: #172b3b;
   border-style: none;
   outline: none;
   padding: 0 0.5rem;
@@ -96,13 +104,65 @@ button:active {
   overflow: hidden;
   height: 200px;
 }
-.card button {
+.card article {
+  display: grid;
+  grid-template: "a a" "b c" "d e" "f f";
+}
+.card article h2 {
+  grid-area: a;
+}
+.card article button {
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   width: 2.3rem;
   height: 2.3rem;
-  margin-left: 0;
   text-align: center;
   vertical-align: center;
+  grid-area: f;
+}
+.card article #username-em,
+.card article #email-em,
+.card article #username,
+.card article #email {
+  text-align: left;
+}
+.card article #email {
+  grid-area: e;
+}
+.card aside {
+  display: grid;
+  grid-template: "a a" "b c" "d e" "f g";
+}
+.card aside #city-em,
+.card aside #city-text,
+.card aside #phone-em,
+.card aside #phone,
+.card aside #company-em,
+.card aside #company {
+  text-align: left;
+}
+.card aside h3 {
+  grid-area: a;
+  text-align: left;
+}
+.card aside #city-em {
+  grid-area: b;
+}
+.card aside #city-text {
+  grid-area: c;
+}
+.card aside #phone-em {
+  grid-area: d;
+}
+.card aside #phone {
+  grid-area: e;
+}
+.card aside #company-em {
+  grid-area: f;
+}
+.card aside #company {
+  grid-area: g;
 }
 
 .double-card {

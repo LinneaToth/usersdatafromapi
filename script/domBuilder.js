@@ -39,8 +39,10 @@ function buildCard(user) {
     //Start of actual content
 
     const name = buildElement("h2", user.name);
-    const username = buildElement("p", ("Username: " + user.userName));
-    const email = buildElement("p", user.email.toLowerCase());
+    const usernameEm = buildElement("em", "User: ", "username-em");
+    const username = buildElement("p", user.userName, "username");
+    const email = buildElement("p", user.email.toLowerCase(), "email");
+    const emailEm = buildElement("em", "E-mail: ", "email-em");
     const headingOptional = document.createElement("h3");
 
     // Add the persons first name to the detailed info. First checks if the name contains any tiles such as mr. or mrs.
@@ -61,20 +63,26 @@ function buildCard(user) {
     }
 
     const cityEm = buildElement("em", "City: ", "city-em");
-    const city = buildElement("p", user.city, "city-text");
+    const city = buildElement("p", user.city, "city-text", "city");
 
-    const phone = buildElement("p", user.phoneNbr);
-    const companyName = buildElement("p", ("Company: " + user.companyName));
+    const phoneEm = buildElement("em", "Phone:", "phone-em");
+    const phone = buildElement("p", user.phoneNbr, "phone");
+    const companyEm = buildElement("em", "Company: ", "company-em");
+    const companyName = buildElement("p", user.companyName, "company");
 
     //Putting it all together
     infoOptional.appendChild(headingOptional);
     infoOptional.appendChild(cityEm);
     infoOptional.appendChild(city);
+    infoOptional.appendChild(phoneEm);
     infoOptional.appendChild(phone);
+    infoOptional.appendChild(companyEm);
     infoOptional.appendChild(companyName);
 
     infoMain.appendChild(name);
+    infoMain.appendChild(usernameEm);
     infoMain.appendChild(username);
+    infoMain.appendChild(emailEm);
     infoMain.appendChild(email);
     infoMain.appendChild(btn);
     card.appendChild(infoMain);
