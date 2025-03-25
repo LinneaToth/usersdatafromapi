@@ -1,5 +1,4 @@
 "use strict"
-console.log("getdata loads")
 
 const getData = async function (url) {
     try {

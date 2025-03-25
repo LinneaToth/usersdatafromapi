@@ -1,26 +1,46 @@
 "use strict"
-console.log("dombuilder loads")
 
-const buildCard = function (user) {
-    //User card
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.classList.add("id" + user.id);
+//Element-creating function so I don't have to repeat myself all the time
+function buildElement(type, innerText = null, id = null, cls = null) {
+    const builtElement = document.createElement(type);
+
+    if (innerText) {
+        builtElement.innerText = innerText;
+    }
+
+    if (id) {
+        builtElement.id = id;
+    }
+
+    if (cls) {
+        if (typeof (cls) === "object") {
+            for (let cl of cls) {
+                builtElement.classList.add(cl);
+            }
+        } else if (typeof (cls) === "string") {
+            builtElement.classList.add(cls);
+        }
+    }
+
+    return builtElement;
+}
+
+//Building card for each user
+function buildCard(user) {
+    //User card container
+    const card = buildElement("div", null, "id-" + user.id, "card");
+
     //Main user info
-    const infoMain = document.createElement("article");
+    const infoMain = buildElement("article");
     //Show/hide details button
-    const btn = document.createElement("button");
-    btn.innerText = "▽";
+    const btn = buildElement("button", "▽");
     //Optional user info
-    const infoOptional = document.createElement("aside");
-    infoOptional.classList.add("hidden");
+    const infoOptional = buildElement("aside", null, null, "hidden");
     //Start of actual content
-    const name = document.createElement("h2");
-    name.innerText = user.name;
-    const username = document.createElement("p");
-    username.innerText = "Username: " + user.userName;
-    const email = document.createElement("p");
-    email.innerText = user.email.toLowerCase();
+
+    const name = buildElement("h2", user.name);
+    const username = buildElement("p", ("Username: " + user.userName));
+    const email = buildElement("p", user.email.toLowerCase());
     const headingOptional = document.createElement("h3");
 
     // Add the persons first name to the detailed info. First checks if the name contains any tiles such as mr. or mrs.
@@ -29,20 +49,26 @@ const buildCard = function (user) {
     if (user.name.includes(".")) {
         const indexOfPeriod = user.name.indexOf(".");
         usersName = user.name.substring(indexOfPeriod + 2);
-        console.log(usersName);
     }
     const indexOfWhitespace = (usersName || user.name).indexOf(" ");
     const firstName = (usersName || user.name).substring(0, indexOfWhitespace);
-    headingOptional.innerText = firstName + "'s details:";
 
-    const city = document.createElement("p");
-    city.innerText = user.city;
-    const phone = document.createElement("p");
-    phone.innerText = user.phoneNbr;
-    const companyName = document.createElement("p");
-    companyName.innerText = "Company: " + user.companyName;
+    //Getting the possessive noun correct, either 's or ' if the name ends with an s
+    if (firstName[firstName.length - 1] === "s") {
+        headingOptional.innerText = firstName + "' details:";
+    } else {
+        headingOptional.innerText = firstName + "'s details:";
+    }
 
+    const cityEm = buildElement("em", "City: ", "city-em");
+    const city = buildElement("p", user.city, "city-text");
+
+    const phone = buildElement("p", user.phoneNbr);
+    const companyName = buildElement("p", ("Company: " + user.companyName));
+
+    //Putting it all together
     infoOptional.appendChild(headingOptional);
+    infoOptional.appendChild(cityEm);
     infoOptional.appendChild(city);
     infoOptional.appendChild(phone);
     infoOptional.appendChild(companyName);
@@ -54,10 +80,10 @@ const buildCard = function (user) {
     card.appendChild(infoMain);
     card.appendChild(infoOptional);
 
+    //Show/hide detailed information
     btn.addEventListener("click", () => {
         infoOptional.classList.toggle("hidden");
         card.classList.toggle("double-card");
-        console.log("button was clicked " + user.id)
 
         if (btn.innerText != "△") {
             btn.innerText = "△";
@@ -68,11 +94,11 @@ const buildCard = function (user) {
     return card;
 }
 
+//adding options to the select user drop down menu
 const buildSelect = function (users, selectElement) {
     for (let user of users) {
-        const optionElement = document.createElement("option");
+        const optionElement = buildElement("option", user.name);
         optionElement.value = user.id;
-        optionElement.innerText = user.name;
         selectElement.appendChild(optionElement);
     }
 }

@@ -5,21 +5,43 @@ import { buildCard, buildSelect } from "./domBuilder.js";
 "use strict"
 
 document.addEventListener("DOMContentLoaded", async () => {
-
     const userURL = "https://jsonplaceholder.typicode.com/users";
     const users = [];
-    const cardsContainer = document.querySelector("#cards-container");
-    const selectElement = document.querySelector("#users");
-    const showAllBtn = document.querySelector("#show-all");
     const userData = await getData(userURL);
-
 
     for (let [index, user] of userData.entries()) {
         users[index] = new User(user);
     }
 
+    const selectElement = document.querySelector("#users");
     buildSelect(users, selectElement);
-    const allOptions = document.querySelectorAll("option");
+
+    const cardsContainer = document.querySelector("#cards-container");
+
+
+    const showAllBtn = document.querySelector("#show-all");
+    showAllBtn.addEventListener("click", showOrHideAll)
+
+
+    function showOrHideAll() {
+
+        if (showAllBtn.innerText === "Show all") {
+
+            for (let user of users) {
+                const card = buildCard(user);
+                cardsContainer.appendChild(card);
+                selectElement.value = "none";
+            }
+
+            showAllBtn.innerText = "Hide all";
+            return;
+
+        } else if (showAllBtn.innerText === "Hide all") {
+            console.log("hide all");
+            hideAll();
+            selectElement.value = "none";
+        }
+    }
 
     function hideAll() {
         showAllBtn.innerText = "Show all";
@@ -28,27 +50,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.remove();
         }
     }
-
-    function showOrHideAll() {
-        console.log("showOrHideAll runs");
-        if (showAllBtn.innerText === "Show all") {
-            for (let user of users) {
-                const card = buildCard(user);
-                cardsContainer.appendChild(card);
-                selectElement.value = "none";
-            }
-
-            showAllBtn.innerText = "Hide all"
-
-        } else if (showAllBtn.innerText === "Hide all") {
-            hideAll();
-            selectElement.value = "none";
-        }
-    }
-
-    showAllBtn.addEventListener("click", () => {
-        showOrHideAll();
-    });
 
     selectElement.addEventListener("change", () => {
         const value = selectElement.selectedOptions[0].value;
