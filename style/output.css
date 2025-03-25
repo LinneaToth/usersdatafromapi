@@ -60,6 +60,10 @@ h3 {
   color: #4682b4;
 }
 
+p {
+  padding-top: 0.3rem;
+}
+
 .hidden {
   max-height: 0;
   opacity: 0;
