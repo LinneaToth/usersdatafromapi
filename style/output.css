@@ -56,6 +56,7 @@ h1 {
 h2,
 h3 {
   margin-bottom: 0.6666666667rem;
+  color: #4682b4;
 }
 
 .hidden {
@@ -104,6 +105,9 @@ button:active {
   overflow: hidden;
   height: 200px;
 }
+.card em {
+  font-weight: 600;
+}
 .card article button {
   margin-top: 2rem;
   margin-left: auto;
@@ -113,6 +117,7 @@ button:active {
   text-align: center;
   vertical-align: center;
 }
+
 .double-card {
   height: auto;
 }
