@@ -104,13 +104,6 @@ button:active {
   overflow: hidden;
   height: 200px;
 }
-.card article {
-  display: grid;
-  grid-template: "a a" "b c" "d e" "f f";
-}
-.card article h2 {
-  grid-area: a;
-}
 .card article button {
   margin-top: 2rem;
   margin-left: auto;
@@ -119,52 +112,7 @@ button:active {
   height: 2.3rem;
   text-align: center;
   vertical-align: center;
-  grid-area: f;
 }
-.card article #username-em,
-.card article #email-em,
-.card article #username,
-.card article #email {
-  text-align: left;
-}
-.card article #email {
-  grid-area: e;
-}
-.card aside {
-  display: grid;
-  grid-template: "a a" "b c" "d e" "f g";
-}
-.card aside #city-em,
-.card aside #city-text,
-.card aside #phone-em,
-.card aside #phone,
-.card aside #company-em,
-.card aside #company {
-  text-align: left;
-}
-.card aside h3 {
-  grid-area: a;
-  text-align: left;
-}
-.card aside #city-em {
-  grid-area: b;
-}
-.card aside #city-text {
-  grid-area: c;
-}
-.card aside #phone-em {
-  grid-area: d;
-}
-.card aside #phone {
-  grid-area: e;
-}
-.card aside #company-em {
-  grid-area: f;
-}
-.card aside #company {
-  grid-area: g;
-}
-
 .double-card {
   height: auto;
 }
