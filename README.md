@@ -6,7 +6,7 @@
 
 This is made for a school assignment. The goal was to fetch users data from API, in this case we were using https://jsonplaceholder.typicode.com/.
 
-We were instructed to implement a clear and readable design, with a clean and simplistic look. I aimed for a generic no-nonsense look that one would expect
+We were instructed to implement a clear and readable design, with a clean and simplistic look. I aimed for a generic no-nonsense look, such as one would expect
 to find in an internal system dialoge at your local municipality. 
 
 ## Features:
