@@ -11,8 +11,16 @@ to find in an internal system dialoge at your local municipality.
 
 ## Features:
 - HTML - Semantic, very basic HTML
-- JS - Fetching data from API, async functions, dynamic DOM-content, code structured with modules using import & export. No libraries or frameworks were used.
-- SASS - Styled with SASS. I used this task as an opportunity to get acquainted with CSS preprocessors, in case of future encounters. 
+- JS - Fetching data from API, async functions, dynamic DOM-content, code structured with modules using import & export. No libraries or frameworks were used
+- SASS - Styled with SASS. I used this task as an opportunity to get acquainted with CSS preprocessors, in case of future encounters
+- Responsiveness - The content is arranged with a simple vertical flexbox. On larger screens, it will utilize it's maximan width and be centered with "air" to the sides. On smaller screens, it will shrink to it's minimum width, and take up all of the screen width.
+
+## Personal takeaways
+I will not be using any CSS preprocessors from personal preference. I do not think there are any advantages compared to the functionality on offer in native CSS nowadays, that makes up for the inconvenience of switching to another syntax and having to compile the code all the time. 
+
+Creating a basic, "naked" look for my simple page was actually more demanding that I would have expected. As soon as something is off, whether it is a color or proportions, it is very apparent. 
+
+Having tried modules, there is no turning back! I will keep practicing creating tidy and effective code.
 
 ## The full details of the assignment are provided below - machine translated from Swedish, for your convenience!
 
