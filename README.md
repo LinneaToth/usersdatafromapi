@@ -1,6 +1,6 @@
 # Users data from API
 
-![site layout](https://github.com/LinneaToth/usersdatafromapi/blob/main/img/preview.jpg)
+![site layout](https://github.com/LinneaToth/usersdatafromapi/blob/main/preview.jpg)
 
 [LIVE PAGE](https://linneatoth.github.io/usersdatafromapi/)
 
