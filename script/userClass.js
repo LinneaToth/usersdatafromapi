@@ -1,4 +1,5 @@
-
+//creates user objects based on what information the assignment was asking for
+//If a value is missing, there will be a default string informing about that
 export class User {
     constructor(object) {
         this.id = object.id ?? "id missing";

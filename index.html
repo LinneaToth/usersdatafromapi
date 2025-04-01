@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users Data from API </title>
-
+    <!--Fonts:-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
-
-    <script src="script/main.js" type="module" defer></script>
+    <!--Script:-->
+    <script src="script/main.js" type="module"></script>
+    <!--Styling:-->
     <link rel="stylesheet" href="style/output.css">
 </head>
 
@@ -20,24 +20,18 @@
     <header>
         <h1>Users data from API</h1>
         <nav>
-            <select name="users" id="users">
+            <select name="users" id="users" aria-label="Choose a user">
                 <option value="none" selected>Choose a user</option>
             </select>
-            <button id="show-all">Show all</button>
+            <button id="show-all" aria-label="Show or hide all users">Show all</button>
         </nav>
     </header>
 
-    <div id="bg-bottom"></div>
-
-
     <main>
-        <section id="cards-container">
-
+        <div id="cards-container">
             <!-- CARDS GO HERE -->
-        </section>
-
+        </div>
     </main>
-
 </body>
 
 </html>

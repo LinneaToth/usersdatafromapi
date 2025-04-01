@@ -5,7 +5,7 @@ const getData = async function (url) {
         const data = await fetch(url);
 
         if (!data.ok) {
-            throw new Error("Response not ok, status: " + data.status);
+            throw new Error("Response not ok: " + data.status);
         }
         const dataJSON = await data.json();
         return dataJSON;
