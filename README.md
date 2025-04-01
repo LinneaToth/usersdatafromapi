@@ -25,51 +25,51 @@ to find in an internal system dialoge at your local municipality.
 > 
 > ### 1. Test the URL with a tool like Postman or others
 >
-> - To understand what the data looks like and its format, start by testing the API using a tool like Postman or another API testing tool.
-> - Use the URL https://jsonplaceholder.typicode.com/users to see user data in JSON format.
-> - This helps you get a sense of the structure of the data and the available information.
+>- To understand what the data looks like and its format, start by testing the API using a tool like Postman or another API testing tool.
+>- Use the URL https://jsonplaceholder.typicode.com/users to see user data in JSON format.
+>- This helps you get a sense of the structure of the data and the available information.
 > 
 > ### 2. Display User Data
 >
-> - From the fetched user data, display the following information directly on the page:
-> - Name (User's name)
-> - Username (Username)
-> - Email (User's email address)
+>- From the fetched user data, display the following information directly on the page:
+>- Name (User's name)
+>- Username (Username)
+>- Email (User's email address)
 > 
 > ### 3. Button to Show More Information
 > 
-> - Add a button that, when clicked, shows more details about the user, such as:
-> - City (City)
-> - Phone (Phone number)
-> - Company name (Company name)
+>- Add a button that, when clicked, shows more details about the user, such as:
+>- City (City)
+>- Phone (Phone number)
+>- Company name (Company name)
 >
 > ### 4. Design
 >
->> - Your design should be clear and readable. Focus on user experience and ensure the text is easy to read and the page has a clean and simple appearance.
->> - >
->>   > > ### 5. Responsive Design
->>   > > >
->>   > > > > - Your design must be responsive, meaning it should work well on both large screens (like computers) and smaller screens (like mobiles and tablets).
-> - Use CSS media queries or flexbox/grid to adjust the layout for different screen sizes.
+>- Your design should be clear and readable. Focus on user experience and ensure the text is easy to read and the page has a clean and simple appearance.
+>
+> ### 5. Responsive Design
+>
+>- Your design must be responsive, meaning it should work well on both large screens (like computers) and smaller screens (like mobiles and tablets).
+>- Use CSS media queries or flexbox/grid to adjust the layout for different screen sizes.
 > 
 >### 6. Choice of Layout
 > 
->  - You can choose to display the user data as a table, cards, list, or any other layout that suits the information best. It’s important that the presentation is clear and easy to follow.
+>- You can choose to display the user data as a table, cards, list, or any other layout that suits the information best. It’s important that the presentation is clear and easy to follow.
 >
 > ### 7. Use at Least Two JavaScript Functions
 >
-> - You must use at least two JavaScript functions. For example, you can create one function to fetch data and another to show more information when the button is clicked.
+>- You must use at least two JavaScript functions. For example, you can create one function to fetch data and another to show more information when the button is clicked.
 >
 >  ### 8. Design Choices
 >- You can freely choose colors, navigation menu (navbar), and footer. Customize the design to make the page more attractive and user-friendly.
 >
 > ### 9. Use Semantic HTML Tags
 >
-> - You must use semantic HTML tags, such as <header>, <footer>, <section>, <article>, and other relevant tags to create a structured and comprehensible HTML.
+>- You must use semantic HTML tags, such as header, footer, section, article, and other relevant tags to create a structured and comprehensible HTML.
 > 
 > ### Description of Functionality
 >
-> - Fetching Data via API: You will use fetch in JavaScript to retrieve user data from the URL https://jsonplaceholder.typicode.com/users. This data will be in JSON format.
-> - Displaying User Data: On the page, display the user's name, username, and email address initially. When the user clicks a button, more detailed information will be displayed, such as city, phone number, and company name.
-> - Interactivity: Use the button to toggle between showing basic user data and detailed user data. This can be done with JavaScript functions to handle the display of extra information.
-> - Responsive Layout: Ensure your layout adapts well to various screen sizes. Your design should be functional and user-friendly on all devices.
+>- Fetching Data via API: You will use fetch in JavaScript to retrieve user data from the URL https://jsonplaceholder.typicode.com/users. This data will be in JSON format.
+>- Displaying User Data: On the page, display the user's name, username, and email address initially. When the user clicks a button, more detailed information will be displayed, such as city, phone number, and company name.
+>- Interactivity: Use the button to toggle between showing basic user data and detailed user data. This can be done with JavaScript functions to handle the display of extra information.
+>- Responsive Layout: Ensure your layout adapts well to various screen sizes. Your design should be functional and user-friendly on all devices.
