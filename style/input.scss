@@ -1,0 +1,208 @@
+@use "sass:math";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*variables, mixins and extends*/
+$font-stack: roboto, sans-serif;
+$padding: 2rem;
+$border-radius: math.div($padding, 4);
+
+$background-color: #f9f9f9;
+$main-color: #4682b4;
+$secondary-color: #172b3b;
+$secondary-color-lighter: #203c52;
+$secondary-color-darker: rgb(35, 64, 87);
+$gray: #a1a1a1;
+$text-color-dark: #060b0f;
+$text-color-light: white;
+$shadow-color: #060b0f10;
+
+@mixin colored-part {
+  background-color: $main-color;
+  color: $text-color-light;
+}
+
+@mixin colored-part-secondary {
+  background-color: $secondary-color;
+  color: $text-color-light;
+}
+
+@mixin transition {
+  transition: all 0.15s ease-in-out;
+}
+
+@mixin drop-shadow {
+  filter: drop-shadow(2px 5px 5px $shadow-color);
+}
+
+@mixin headings-text {
+  font-family: $font-stack;
+  font-weight: bolder;
+  text-align: center;
+  font-style: normal;
+}
+
+%text {
+  font-family: $font-stack;
+  font-style: normal;
+  font-weight: normal;
+  color: $text-color-dark;
+}
+
+%box-in-middle {
+  min-width: 350px;
+  max-width: 550px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+body {
+  background-color: $background-color;
+  min-height: 100vh;
+}
+
+header {
+  @include headings-text;
+  @include colored-part;
+  padding: $padding 0px;
+  margin-bottom: math.div($padding, 2);
+
+  button {
+    width: 5rem;
+    @include colored-part-secondary;
+    cursor: pointer;
+  }
+}
+
+aside {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  margin-top: $padding;
+}
+
+select {
+  border-radius: 0;
+  border-style: none;
+  height: $padding;
+  padding: 0 $border-radius;
+  border-radius: $border-radius;
+  background-color: $text-color-light;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+  justify-content: center;
+  margin-top: $padding;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include headings-text;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 $padding;
+}
+
+h2,
+h3 {
+  margin-bottom: math.div($padding, 3);
+  color: $main-color;
+}
+
+p {
+  @extend %text;
+  padding-top: 0.3rem;
+}
+
+.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+button {
+  @include headings-text;
+  @include transition;
+  background-color: $secondary-color;
+  border-style: none;
+  outline: none;
+  padding: 0 $border-radius;
+  margin-left: math.div($padding, 2);
+  height: $padding;
+  color: $text-color-light;
+  border-radius: $border-radius;
+  z-index: 100000;
+
+  &:hover {
+    background-color: $secondary-color-lighter;
+  }
+
+  &:active {
+    background-color: $secondary-color-darker;
+    transition: none;
+  }
+}
+
+#cards-container {
+  display: flex;
+  flex-direction: column;
+  @extend %box-in-middle;
+  padding: $padding;
+}
+
+.card {
+  background-color: $text-color-light;
+  margin: math.div($padding, 2) 0;
+  padding: $padding;
+  border-radius: $border-radius;
+  @include transition;
+  @include drop-shadow;
+  overflow: hidden;
+  height: 200px;
+
+  em {
+    @extend %text;
+    font-weight: 600;
+  }
+
+  article {
+    button {
+      margin-top: $padding;
+      margin-left: auto;
+      margin-right: auto;
+      width: 2rem;
+      height: 2rem;
+      text-align: center;
+      vertical-align: center;
+    }
+  }
+
+  button {
+    color: $gray;
+    background-color: white;
+    border: 1px solid $gray;
+    font-stretch: ultra-expanded;
+
+    &:active {
+      color: white;
+      background-color: $gray;
+      border: 1px solid white;
+      font-stretch: ultra-expanded;
+    }
+  }
+}
+
+/*This class is added when the card is expanded*/
+.double-card {
+  height: auto;
+}
