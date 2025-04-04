@@ -12,7 +12,7 @@ to find in an internal system dialoge at your local municipality.
 ## Features:
 - HTML - Semantic, very basic HTML
 - JS - Fetching data from API with error handling, async functions, dynamic DOM-content, code structured with modules using import & export. No libraries or frameworks were used
-- SASS - Styled with SASS. I used this task as an opportunity to get acquainted with CSS preprocessors, in case of future encounters
+- SCSS - Styled with SCSS. I used this task as an opportunity to get acquainted with CSS preprocessors, in case of future encounters
 - Responsiveness - The content is arranged with a simple vertical flexbox. On larger screens, it will utilize it's maximan width and be centered with "air" to the sides. On smaller screens, it will shrink to it's minimum width, and take up all of the screen width.
 
 ## Personal takeaways
